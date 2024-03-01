@@ -53,7 +53,7 @@ def get_maisa_summarize(article):
         "text": article
     }
     headers = {
-        "X-API-Key": {os.getenv('MAISA_API_KEY')},
+        "X-API-Key": str(os.getenv('MAISA_API_KEY')),
         "accept": "application/json",
         "content-type": "application/json"
     }
@@ -82,6 +82,7 @@ def process_articles_concurrently(articles_dict):
                 if data:
                     article["text"] = data["text"]
                     article["top_image"] = data["top_image"]
+                    article["summary"] = get_maisa_summarize(article["text"])
             except Exception as exc:
                 print(f"Article at {article['url']} generated an exception: {exc}")
 

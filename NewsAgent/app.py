@@ -4,7 +4,7 @@ from news_extractor import obtain_articles_from_query
 from article_creator import generate_article_from_articles
 
 # Title or introduction to your app
-st.title("News Article Generation App")
+st.title("Factify")
 
 # Search bar
 user_query = st.text_input("Search for stories...", "")
