@@ -6,7 +6,6 @@ from query_constructor import llm_connect
 from news_extractor import obtain_articles_from_query
 import concurrent.futures
 
-
 load_dotenv()
 
 def extract_facts_prompt(user_query, article):
@@ -120,10 +119,10 @@ def create_stories_prompt(user_query, bullet_point_articles):
             * Body: Divide the body into sections based on themes or topics. Each section should start with a clear topic sentence, followed by elaboration and explanation of bullet points, ensuring a logical flow of ideas.
                 * Paraphrase or use direct quotes as necessary. 
                 
-                * Immediately follow the statement with an Markdown reference link formatted as [**_Source Name_**](ARTICLE_URL). Replace ARTICLE_URL with the actual URL and Source Name with the name of the source.
+                * Immediately follow the statement with an Markdown reference link formatted as - [**_Source Name_**](ARTICLE_URL). Replace ARTICLE_URL with the actual URL and Source Name with the name of the source.
             * Conclusion: Summarize the main points discussed and provide a concluding remark that reflects on the implications or significance of the information presented.
         4. Incorporate Quotes and References:
-            * When a statement from the bullet points is directly quoted or is considered significant, include a Markdown reference link after the statement. Format the link as [**_Source Name_**](ARTICLE_URL), where SOURCE_URL is the URL of the source and Source Name is the name of the source.
+            * When a statement from the bullet points is directly quoted or is considered significant, include a Markdown reference link after the statement. Format the link as - [**_Source Name_**](ARTICLE_URL), where SOURCE_URL is the URL of the source and Source Name is the name of the source.
             * Ensure that each reference link is correctly formatted and accurately reflects the source of the information.
         5. Maintain Objectivity and Unbiased Reporting:
             * Present information and analyses without bias, focusing on facts and supported conclusions.
